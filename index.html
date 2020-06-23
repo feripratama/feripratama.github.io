@@ -1,20 +1,105 @@
-<html>
-<head>
-    <title>Feri Pratama</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <div class="navbar">
-        <div class="brand">
-            navbar
-        </div>        
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="container">        
-        <div class="row"> 
-            <b>Welcome</b> 
-        </div>        
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Port Folio</title>
+</head>
+
+<body>
+    <section class="intro">
+        <div class="container">
+            <h1>Feri Pratama</h1> 
+            <h3>Port Folio &darr;</h3>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <h2 style="text-align: center;margin-top: 10px;">Daftar projek yang pernah dikerjakan.</h2>
+        <ul>
+            <li>
+                <div>
+                    <img src="imgs/bni-life.png" alt="bni-life" style="width: 100%;">
+                    <time>BNI Life</time>
+                    Pengerjaan frontend dan backend pada halaman beli online.
+                    <br>
+                    <a target="_blank" href="https://www.bni-life.co.id/id/product/individu/jiwa/bni-life-digi-micro-protection" style="text-decoration: none; color: blue;">Lihat web</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="imgs/alkespintar.png" alt="bni-life" style="width: 100%;">
+                    <time>Alkespintar</time>
+                    Pengerjaan frontend dan backend web alkespintar.
+                    <br>
+                    <a target="_blank" href="https://www.alkespintar.id/" style="text-decoration: none; color: blue;">Lihat web</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="imgs/bidaja.png" alt="bni-life" style="width: 100%;">
+                    <time>BidAja</time>
+                    Pengerjaan pada halaman admin.
+                    <br>
+                    <a target="_blank" href="https://bidaja.co.id/" style="text-decoration: none; color: blue;">Lihat web</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="imgs/advancetrust.png" alt="bni-life" style="width: 100%;">
+                    <time>Advance Trust</time>
+                    Pembuatan package laravel.
+                    <br>
+                    <a target="_blank" href="https://github.com/feripratama/advancetrust" style="text-decoration: none; color: blue;">Lihat github</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="imgs/necto-cms.png" alt="bni-life" style="width: 100%; background-color: whitesmoke; padding: 15px">
+                    <time>Necto CMS (Projek Pribadi)</time> 
+                    Masih dalam tahap development.
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <script>
+        (function () {
+
+            'use strict';
+
+            // define variables
+            var items = document.querySelectorAll(".timeline li");
+
+            // check if an element is in viewport
+            // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function callbackFunc() {
+                for (var i = 0; i < items.length; i++) {
+                    if (isElementInViewport(items[i])) {
+                        items[i].classList.add("in-view");
+                    }
+                }
+            }
+
+            // listen for events
+            window.addEventListener("load", callbackFunc);
+            window.addEventListener("resize", callbackFunc);
+            window.addEventListener("scroll", callbackFunc);
+
+        })();
+    </script>
 </body>
+
 </html>
