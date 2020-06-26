@@ -108,7 +108,7 @@
         })();
 
         $.ajax({
-            url: 'https://visitor--indukai.repl.co/',
+            url: 'http://boiling-reef-27423.herokuapp.com/api/v1/visit',
             success: function(d) {
                 $('#pengunjung').text("Total pengunjung : " + d.total_visitor)
             }
