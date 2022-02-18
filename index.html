@@ -13,7 +13,7 @@
     <section id=timeline>
         <h1>PORTFOLIO</h1>
         <p class="leader" id="mygithub" style="font-weight: bold; margin-bottom: 15px; cursor: pointer; text-decoration: underline;">Feri Pratama (Web Developer)</p>
-        <p id="pengunjung" class="leader" style="margin-bottom: 20px;">Total Pengunjung : -</p>
+        <p id="pengunjung" class="leader" style="margin-bottom: 20px;">Total Pengunjung Active : -</p>
         <div class="demo-card-wrapper">
             <div class="demo-card demo-card--step1">
                 <div class="head">
@@ -107,7 +107,7 @@
         var socket = io('https://visitorws.herokuapp.com');
 
         socket.on('total', function(data) {
-            $('#pengunjung').text("Total pengunjung : " + data.total)
+            $('#pengunjung').text("Total Pengunjung Active : " + data.total)
         });
 
         $('#mygithub').click(function() {
